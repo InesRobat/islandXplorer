@@ -1,0 +1,24 @@
+@import './../../../../../styles/utils.scss';
+
+:host {
+  @include flex(center, center, column);
+}
+
+.popover-content {
+  @include flex(center, flex-start, column);
+  gap: 10px;
+
+  &__title {
+    font-size: em(18);
+  }
+
+  &__text {
+    @include flex(center, center, row);
+    gap: 10px;
+    font-size: em(16);
+
+    img {
+      @include img(get-vh(18px), get-vh(18px), contain, center);
+    }
+  }
+}

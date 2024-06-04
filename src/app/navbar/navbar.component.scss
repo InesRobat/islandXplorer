@@ -1,0 +1,51 @@
+@import './../../../styles/utils.scss';
+
+:host {
+  @include flex(center, center);
+  position: fixed;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  color: $main-color;
+}
+
+.navbar {
+  @include flex(space-evenly, center, row);
+  border-radius: 500px;
+  padding: 6px;
+  box-sizing: border-box;
+  background-color: $white;
+  width: 350px;
+  font-size: em(16);
+
+  @media (min-width: 810px) and (max-width: 1199px),
+  (max-width: 809px) {
+    left: inherit;
+  }
+}
+
+.weather,
+.time-zone {
+  @include flex(center, center, column);
+  width: get-vh(48px);
+  height: get-vh(48px);
+  border-radius: 100%;
+
+  app-popover {
+    @include flex(center, center, column);
+  }
+}
+
+.cursor {
+  @include flex(center, center, column);
+  transition: backgroundColor .3s ease;
+  padding: 1.5% 2%;
+  box-sizing: border-box;
+
+  &:hover,
+  &.active {
+    cursor: pointer;
+    background-color: #F8F8F8;
+    border-radius: 500px;
+  }
+}

@@ -1,0 +1,38 @@
+@import './../../../../../styles/utils.scss';
+
+:host {
+  @include flex(flex-start, center, column);
+  // width: get-vh(840px);
+  height: 100%;
+  font-size: em(16);
+  gap: 40px;
+  padding: 20% 5% 5%;
+  box-sizing: border-box;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.title {
+  font-weight: bold;
+  font-size: em(24);
+  text-align: start;
+  width: 100%;
+}
+
+.desc,
+.sub {
+  opacity: .6;
+}
+
+.image {
+  width: get-vh(680px);
+  height: get-vh(412px);
+
+  img {
+    @include img(100%, 100%, contain, center);
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,98 @@
+@import './../../../styles/utils.scss';
+
+:host {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  @include flex(center, center, column);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &__text {
+    @include flex(center, center, column);
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+
+    &__top {
+      font-size: em(80);
+      color: $gold;
+      font-family: 'bitterRose';
+
+      @media screen and (max-width: 991px) {
+        font-size: 4rem;
+      }
+    }
+
+    &__bottom {
+      font-size: em(160);
+
+      @media screen and (max-width: 991px) {
+        font-size: 7rem;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 5rem;
+      }
+    }
+
+    &__desc {
+      font-size: em(24);
+      width: 60%;
+      text-align: center;
+
+      @media screen and (max-width: 991px) {
+        font-size: 1.25rem;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+.scroll-wrapper {
+  @include flex(flex-start, center, row);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  will-change: auto;
+  // padding-bottom: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+
+  @media screen and (max-width: 991px) {
+    @include flex(flex-start, center, column);
+    width: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  img {
+    @include img(100%, 100%, cover, 50% 100%);
+    max-width: 100%;
+  }
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 5, 5, .2);
+  z-index: 0;
+}

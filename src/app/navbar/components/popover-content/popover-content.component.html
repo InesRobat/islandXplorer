@@ -1,0 +1,9 @@
+<div class="popover-content">
+    <div class="popover-content__title">{{title}}</div>
+    @for (item of array; track $index) {
+    <div class="popover-content__text">
+        <img [src]="item.src" alt="icon_sunset">
+        <div class="popover-content__text__time">{{item.text}}</div>
+    </div>
+    }
+</div>

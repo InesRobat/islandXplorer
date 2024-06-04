@@ -1,0 +1,7 @@
+<div class="icon">
+    <img [src]="imgSrc" alt="icon" (mouseleave)="toggle()" (mouseenter)="toggle()" (click)="toggle()">
+</div>
+
+<div class="popover" [class.active]="isActive">
+    <ng-content></ng-content>
+</div>

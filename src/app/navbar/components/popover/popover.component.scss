@@ -1,0 +1,36 @@
+@import './../../../../../styles/utils.scss';
+
+:host {
+  @include flex(center, center, row);
+}
+
+.icon {
+  width: get-vh(30px);
+  height: get-vh(30px);
+
+  img {
+    @include img(100%, 100%, contain, center);
+  }
+}
+
+.popover {
+  @include flex(center, center, row);
+  background-color: $white;
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  transition: all 500ms ease 0s;
+  border-radius: 10px;
+  color: $main-color;
+  margin-bottom: get-vh(20px);
+  transform: translateY(0%);
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-10%);
+}

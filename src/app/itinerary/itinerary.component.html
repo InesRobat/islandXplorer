@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="accordion-wrap" #scrollWrapper (wheel)="onWheel($event)">
+        <ul>
+            @for (item of itinerayMenu; track item; let index = $index) {
+            <li #elements #el (click)="open(el)">
+                <div class="accordion-item">
+                    <div class="accordion-item__text">
+                        <div class="accordion-item__text__top">{{item.title}}</div>
+                        <div class="accordion-item__text__bottom">{{item.subtitle}}</div>
+                    </div>
+                    <div class="accordion-item__icon">
+                        <img [src]="item.src" alt="image">
+                    </div>
+                </div>
+                <div class="accordion-menu">
+                    <app-panel-detail [panelTitle]="item.panelTitle" [panelSubtitle]="item.panelSubtitle"
+                        [panelDesc]="item.panelDesc" [panelSrc]="item.panelSrc" />
+                </div>
+            </li>
+            }
+        </ul>
+    </div>
+</div>

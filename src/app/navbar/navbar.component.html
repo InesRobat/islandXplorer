@@ -1,0 +1,17 @@
+<div class="navbar">
+    <div class="weather cursor">
+        <app-popover imgSrc="./assets/images/meteo.png">
+            <app-popover-content [title]="'Tropical dream'" [array]="weatherInfo" />
+        </app-popover>
+    </div>
+
+    <div class="time-zone cursor">
+        <app-popover imgSrc="./assets/images/time.svg">
+            <app-popover-content [title]="'Paradis time'" [array]="timeInfo" />
+        </app-popover>
+    </div>
+
+    <div class="name cursor" routerLink="explore">Explore</div>
+
+    <div class="menu cursor" routerLink="itinerary">Itinerary</div>
+</div>

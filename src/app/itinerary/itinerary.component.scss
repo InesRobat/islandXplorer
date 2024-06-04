@@ -1,0 +1,129 @@
+@import './../../../styles/utils.scss';
+
+.itinerary {
+  @include flex(flex-start, center, row);
+  min-width: 100%;
+  height: 100vh;
+
+  @media screen and (max-width: 991px) {
+    @include flex(flex-start, center, column);
+  }
+}
+
+
+.wrapper {
+  @include flex(flex-start, center, row);
+  height: 100vh;
+
+  @media screen and (max-width: 991px) {
+    @include flex(flex-start, center, column);
+  }
+}
+
+.accordion-wrap {
+  @include flex(flex-start, center, row);
+  height: 100%;
+  overflow-y: hidden;
+  will-change: auto;
+  // padding-bottom: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+
+  @media screen and (max-width: 991px) {
+    @include flex(flex-start, center, column);
+    width: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
+
+.accordion-wrap ul {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (max-width: 991px) {
+    @include flex(flex-start, center, column);
+  }
+}
+
+.accordion-wrap .accordion-item {
+  list-style: none;
+  width: get-vh(560px);
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s linear;
+
+  img {
+    @include img(100%, 100%, cover, 60% 100%);
+  }
+}
+
+.accordion-item {
+  cursor: pointer;
+
+  &__text {
+    @include flex(center, center, column);
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    text-align: center;
+
+    &__top {
+      font-size: em(64);
+      color: $gold;
+      font-family: 'bitterRose';
+    }
+
+    &__bottom {
+      font-size: em(40);
+    }
+  }
+
+  &__icon {
+    width: get-vh(560px);
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      @include img(100%, 100%, cover, 60% 100%);
+      max-width: 100%;
+    }
+  }
+}
+
+.accordion-wrap ul li {
+  display: flex;
+}
+
+.accordion-menu {
+  width: 0px;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out 0.2s;
+  opacity: 0;
+}
+
+.accordion-wrap ul li.active .accordion-menu {
+  width: get-vh(840px);
+  flex-grow: 1;
+  opacity: 1;
+}
